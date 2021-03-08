@@ -1,2 +1,4 @@
 2021/03/05 16:09:37 main.go:16: test
 2021/03/08 16:55:32 todos.go:71: no such column: ctrated_at
+2021/03/08 17:03:27 todos.go:96: near "where": syntax error
+2021/03/08 17:06:57 todos.go:106: near "form": syntax error
