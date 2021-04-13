@@ -5,6 +5,8 @@ import (
 	"go-to-do/app/models"
 	"go-to-do/config"
 	"net/http"
+	"regexp"
+	"strconv"
 	"text/template"
 )
 
@@ -30,6 +32,20 @@ func session(w http.ResponseWriter, r *http.Request) (sess models.Session, err e
 	return sess, err
 }
 
+var validPath = regexp.MustCompile("^/todos/(edit|save|update|delete)/([0-9]+)$")
+
+func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		q := validPath.FindStringSubmatch(r.URL.Path)
+		if q == nil {
+			http.NotFound(w, r)
+			return
+		}
+		id, _ := strconv.Atoi(q[2])
+		fmt.Println(id)
+		fn(w, r, id)
+	}
+}
 
 func StartMainServer() error {
 	files := http.FileServer(http.Dir(config.Config.Static))
@@ -40,5 +56,10 @@ func StartMainServer() error {
 	http.HandleFunc("/authenticate", authenticate)
 	http.HandleFunc("/logout", logout)
 	http.HandleFunc("/todos", index)
+	http.HandleFunc("/todos/new", todoNew)
+	http.HandleFunc("/todos/save", todoSave)
+	http.HandleFunc("/todos/edit/", parseURL(todoEdit))
+	http.HandleFunc("/todos/update/", parseURL(todoUpdate))
+	http.HandleFunc("/todos/delete/", parseURL(todoDelete))
 	return http.ListenAndServe(":"+config.Config.Port, nil)
 }
