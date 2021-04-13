@@ -39,7 +39,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		generateHTML(w, nil, "layout", "public_navbar", "login")
 	} else {
-		http.Redirect(w, r, ".todos", 302)
+		http.Redirect(w, r, "/todos", 302)
 	}
 }
 
@@ -64,5 +64,23 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 		http.SetCookie(w, &cookie)
 		http.Redirect(w, r, "/", 302)
 	}
+}
 
+func logout(w http.ResponseWriter, r *http.Request) {
+	cookie, err := r.Cookie("_cookie")
+	if err != nil {
+		log.Println(err)
+	}
+	if err != http.ErrNoCookie {
+		session := models.Session{UUID: cookie.Value}
+		session.DeleteSessionByUUID()
+		cookie := http.Cookie{
+			Name: "_cookie",
+			Value: session.UUID,
+			HttpOnly: true,
+			MaxAge: -1,
+		}
+		http.SetCookie(w, &cookie)
+	}
+	http.Redirect(w, r, "/login", 302)
 }

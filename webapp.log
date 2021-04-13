@@ -1102,3 +1102,4 @@ net/http.(*conn).serve(0xc0000f2000, 0x456eec0, 0xc0000a8500)
 	/usr/local/Cellar/go/1.16.2/libexec/src/net/http/server.go:1952 +0x8cd
 created by net/http.(*Server).Serve
 	/usr/local/Cellar/go/1.16.2/libexec/src/net/http/server.go:3013 +0x39b
+2021/04/13 14:16:24 route_auth.go:73: http: named cookie not present
