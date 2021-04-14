@@ -1103,3 +1103,31 @@ net/http.(*conn).serve(0xc0000f2000, 0x456eec0, 0xc0000a8500)
 created by net/http.(*Server).Serve
 	/usr/local/Cellar/go/1.16.2/libexec/src/net/http/server.go:3013 +0x39b
 2021/04/13 14:16:24 route_auth.go:73: http: named cookie not present
+2021/04/14 10:51:12 users.go:159: sql: no rows in result set
+2021/04/14 10:51:12 route_main.go:26: sql: no rows in result set
+2021/04/14 10:51:12 users.go:159: sql: no rows in result set
+2021/04/14 10:51:12 route_main.go:26: sql: no rows in result set
+2021/04/14 11:17:12 users.go:157: sql: no rows in result set
+2021/04/14 11:17:12 route_main.go:26: sql: no rows in result set
+2021/04/14 11:17:13 users.go:157: sql: no rows in result set
+2021/04/14 11:17:13 route_main.go:26: sql: no rows in result set
+2021/04/14 11:17:16 users.go:157: sql: no rows in result set
+2021/04/14 11:17:16 route_main.go:26: sql: no rows in result set
+2021/04/14 11:17:16 users.go:157: sql: no rows in result set
+2021/04/14 11:17:16 route_main.go:26: sql: no rows in result set
+2021/04/14 11:17:17 users.go:157: sql: no rows in result set
+2021/04/14 11:17:17 route_main.go:26: sql: no rows in result set
+2021/04/14 11:17:18 users.go:157: sql: no rows in result set
+2021/04/14 11:17:18 route_main.go:26: sql: no rows in result set
+2021/04/14 11:17:19 users.go:157: sql: no rows in result set
+2021/04/14 11:17:19 route_main.go:26: sql: no rows in result set
+2021/04/14 11:17:19 users.go:157: sql: no rows in result set
+2021/04/14 11:17:19 route_main.go:26: sql: no rows in result set
+2021/04/14 11:20:08 users.go:157: sql: no rows in result set
+2021/04/14 11:20:08 route_main.go:26: sql: no rows in result set
+2021/04/14 11:20:08 users.go:157: sql: no rows in result set
+2021/04/14 11:20:08 route_main.go:26: sql: no rows in result set
+2021/04/14 11:54:48 users.go:157: sql: no rows in result set
+2021/04/14 11:54:48 route_main.go:26: sql: no rows in result set
+2021/04/14 11:54:49 users.go:157: sql: no rows in result set
+2021/04/14 11:54:49 route_main.go:26: sql: no rows in result set
